@@ -63,3 +63,18 @@ window.addEventListener('load', () => {
     bar.style.width = bar.style.width;
   });
 });
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.getElementById("navMenu");
+
+  toggle.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Close on link click (mobile UX)
+  menu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      menu.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });

@@ -392,67 +392,35 @@ footer {
    NAVBAR (TOP)
 ================================ */
 
+/* Navbar wrapper */
 .navbar {
-  background-color: var(--color-surface);
+  position: relative;
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
-  /* height: 4rem; */
+  z-index: 1000;
 }
 
-/* Inner layout */
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3); /* 24px */
 }
 
-/* Brand / Logo */
-.nav-brand {
-  font-weight: 600;
-  color: var(--color-text-primary);
-}
-
-/* Navigation links container */
+/* Desktop */
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4); /* 24px */
+  gap: var(--space-4);
 }
 
-/* Individual links */
-.nav-links a {
-  color: var(--color-text-secondary);
-  font-weight: 500;
-  padding-block: var(--space-1); /* 4px */
-  position: relative;
-}
-
-/* Hover state */
-.nav-links a:hover {
-  color: var(--color-primary);
-}
-
-/* Active link indicator (optional) */
-.nav-links a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: calc(var(--space-1) * -1); /* 4px below text */
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-primary);
-}
-/* Hamburger button (hidden on desktop) */
 .nav-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   background: none;
   border: none;
-  color: var(--color-text-primary);
   cursor: pointer;
 }
 
-/* Mobile styles */
+/* Mobile */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -462,23 +430,26 @@ footer {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    right: 0;
     background: var(--color-surface);
     flex-direction: column;
-    gap: 0;
-    padding: var(--space-3);
+    overflow: hidden;
+    max-height: 0;                 /* CLOSED */
+    transition: max-height 0.3s ease;
     border-bottom: 1px solid var(--color-border);
-    display: none;
   }
 
   .nav-links a {
-    padding: var(--space-2) 0;
+    padding: 14px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
   }
 
   .nav-links.open {
-    display: flex;
+    max-height: 420px;             /* OPEN */
   }
 }
+
 
 /*================================
    Temporary Custom Styles
