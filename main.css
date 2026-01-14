@@ -442,6 +442,43 @@ footer {
   height: 2px;
   background-color: var(--color-primary);
 }
+/* Hamburger button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-surface);
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    display: none;
+  }
+
+  .nav-links a {
+    padding: var(--space-2) 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
 
 /*================================
    Temporary Custom Styles
