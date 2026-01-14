@@ -878,6 +878,12 @@ footer {
 }
 
 
+
+@media (max-width: 768px) {
+  .profile-img {
+    display: none;
+  }
+}
 /* ================================
    END OF BASE DESIGN SYSTEM
 ================================ */
