@@ -303,8 +303,8 @@ footer {
 
 /* Profile Image (example component) */
 .profile-img {
-  width: 350px;
-  height: 350px;
+  width: 30%;
+  height: 30%;
   border-radius: 20%;
   object-fit: cover;
 }
@@ -674,7 +674,7 @@ footer {
 .project-link:hover {
   text-decoration: underline;
 }
-
+/* ================================ CONTACT SECTION ===========*/
 .contact-section {
   background: radial-gradient(circle at top, #0f172a, #020617);
   padding: 80px 0;
@@ -787,6 +787,96 @@ footer {
 .view-work{
   width:10rem;
 }
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.contact-link:hover .contact-icon {
+  opacity: 1;
+}
+
+/*<!-- ================= COMPETITIVE CODING ================= -->*/
+.coding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.coding-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px 28px;
+  backdrop-filter: blur(14px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.coding-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+}
+
+.coding-logo {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 14px;
+}
+
+.coding-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.coding-stats {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  color: #cbd5f5;
+  font-size: 0.95rem;
+}
+
+.coding-stats li {
+  margin-bottom: 6px;
+}
+
+.coding-link {
+  color: #60a5fa;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.coding-link:hover {
+  text-decoration: underline;
+}
+
+
+
+/*===Reveal Animation===*/
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* ================================
    END OF BASE DESIGN SYSTEM
 ================================ */
