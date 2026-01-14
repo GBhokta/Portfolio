@@ -415,6 +415,7 @@ footer {
 /* Navigation links container */
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-4); /* 24px */
 }
 
